@@ -15,11 +15,15 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
+    _navigateToPage();
+    super.initState();
+  }
+
+  void _navigateToPage() {
     Timer(const Duration(seconds: 5), () {
       Navigator.of(context)
           .pushNamedAndRemoveUntil(HomePage.route, (route) => false);
     });
-    super.initState();
   }
 
   @override

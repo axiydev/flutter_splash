@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         HomePage.route: (context) => const HomePage(),
         SplashPage.route: (context) => const SplashPage()
       },
-      initialRoute: SplashPage.route,
+      initialRoute: HomePage.route,
     );
   }
 }
