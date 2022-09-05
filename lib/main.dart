@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_splash/pages/home/home_page.dart';
-import 'package:flutter_splash/pages/splash/splash_page.dart';
+import 'package:flutter_splash/pages/sign_in/sign_in_page.dart';
+import 'package:flutter_splash/pages/sign_up/sign_up_page.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -22,9 +23,11 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         HomePage.route: (context) => const HomePage(),
-        SplashPage.route: (context) => const SplashPage()
+        // SplashPage.route: (context) => const SplashPage(),
+        SignInPage.route: (context) => const SignInPage(),
+        SignUpPage.route: (context) => const SignUpPage()
       },
-      initialRoute: SplashPage.route,
+      initialRoute: SignInPage.route,
     );
   }
 }
