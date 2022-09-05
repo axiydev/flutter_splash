@@ -20,10 +20,14 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _navigateToPage() {
-    Timer(const Duration(seconds: 5), () {
-      Navigator.of(context)
-          .pushNamedAndRemoveUntil(HomePage.route, (route) => false);
+    Timer(const Duration(seconds: 0), () {
+      loadData().then((value) => Navigator.of(context)
+          .pushNamedAndRemoveUntil(HomePage.route, (route) => false));
     });
+  }
+
+  Future<void> loadData() async {
+    await Future.delayed(const Duration(seconds: 5));
   }
 
   @override

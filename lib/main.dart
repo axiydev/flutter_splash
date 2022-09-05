@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_splash/pages/home/home_page.dart';
 import 'package:flutter_splash/pages/splash/splash_page.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
+void main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  await Future.delayed(const Duration(seconds: 3), () {});
+  FlutterNativeSplash.remove();
   runApp(const MyApp());
 }
 
@@ -20,7 +24,7 @@ class MyApp extends StatelessWidget {
         HomePage.route: (context) => const HomePage(),
         SplashPage.route: (context) => const SplashPage()
       },
-      initialRoute: HomePage.route,
+      initialRoute: SplashPage.route,
     );
   }
 }
